@@ -8,13 +8,13 @@ MODEL_PATH = "yolov8n.pt"
 MODEL_URL = "https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt"
 
 if not os.path.exists(MODEL_PATH):
-    print("📦 Downloading YOLOv8 model...")
+    print(" Downloading YOLOv8 model...")
     r = requests.get(MODEL_URL, stream=True)
     with open(MODEL_PATH, 'wb') as f:
         for chunk in r.iter_content(chunk_size=8192):
             if chunk:
                 f.write(chunk)
-    print("✅ Model downloaded successfully.")
+    print(" Model downloaded successfully.")
 
 
 model = YOLO(MODEL_PATH)
